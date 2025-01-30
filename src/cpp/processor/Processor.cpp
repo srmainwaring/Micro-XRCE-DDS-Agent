@@ -1031,11 +1031,11 @@ void Processor<EndPoint>::check_heartbeats()
             {
                 server_.destroy_session(conversion::clientkey_to_raw(client->get_client_key()));
 
-                UXR_AGENT_LOG_INFO(
-                    UXR_DECORATE_YELLOW("Session destroyed due to liveliness timeout"),
-                    "client_key: 0x{:08X}, address: {}",
-                    raw_key,
-                    output_packet.destination);
+                // UXR_AGENT_LOG_INFO(
+                //     UXR_DECORATE_YELLOW("Session destroyed due to liveliness timeout"),
+                //     "client_key: 0x{:08X}, address: {}",
+                //     raw_key,
+                //     output_packet.destination);
             }
         }
     }

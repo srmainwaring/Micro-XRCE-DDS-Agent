@@ -60,11 +60,11 @@ void get_transport_interfaces<IPv4EndPoint>(
                 transport_addresses.emplace_back();
                 transport_addresses.back().medium_locator(medium_locator);
 
-                UXR_AGENT_LOG_TRACE(
-                    UXR_DECORATE_WHITE("interface found"),
-                    "address: {}",
-                    transport_addresses.back()
-                );
+                // UXR_AGENT_LOG_TRACE(
+                //     UXR_DECORATE_WHITE("interface found"),
+                //     "address: {}",
+                //     transport_addresses.back()
+                // );
             }
         }
     }
@@ -110,11 +110,11 @@ void get_transport_interfaces<IPv6EndPoint>(
                 transport_addresses.emplace_back();
                 transport_addresses.back().large_locator(large_locator);
 
-                UXR_AGENT_LOG_TRACE(
-                    UXR_DECORATE_WHITE("interface found"),
-                    "address: {}",
-                    transport_addresses.back()
-                );
+                // UXR_AGENT_LOG_TRACE(
+                //     UXR_DECORATE_WHITE("interface found"),
+                //     "address: {}",
+                //     transport_addresses.back()
+                // );
             }
         }
     }

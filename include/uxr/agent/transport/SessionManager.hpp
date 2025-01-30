@@ -71,20 +71,20 @@ void SessionManager<EndPoint>::establish_session(
     {
         endpoint_to_client_map_.erase(it_client->second);
         it_client->second = endpoint;
-        UXR_AGENT_LOG_INFO(
-            UXR_DECORATE_GREEN("session re-established"),
-            "client_key: 0x{:08X}, address: {}",
-            client_key,
-            endpoint);
+        // UXR_AGENT_LOG_INFO(
+        //     UXR_DECORATE_GREEN("session re-established"),
+        //     "client_key: 0x{:08X}, address: {}",
+        //     client_key,
+        //     endpoint);
     }
     else
     {
         client_to_endpoint_map_.emplace(client_key, endpoint);
-        UXR_AGENT_LOG_INFO(
-            UXR_DECORATE_GREEN("session established"),
-            "client_key: 0x{:08X}, address: {}",
-            client_key,
-            endpoint);
+        // UXR_AGENT_LOG_INFO(
+        //     UXR_DECORATE_GREEN("session established"),
+        //     "client_key: 0x{:08X}, address: {}",
+        //     client_key,
+        //     endpoint);
     }
 
     if (!has_session_client_key(session_id))
@@ -110,11 +110,11 @@ void SessionManager<EndPoint>::destroy_session(
     auto it = endpoint_to_client_map_.find(endpoint);
     if (it != endpoint_to_client_map_.end())
     {
-        UXR_AGENT_LOG_INFO(
-            UXR_DECORATE_GREEN("session closed"),
-            "client_key: 0x{:08X}, address: {}",
-            it->second,
-            endpoint);
+        // UXR_AGENT_LOG_INFO(
+        //     UXR_DECORATE_GREEN("session closed"),
+        //     "client_key: 0x{:08X}, address: {}",
+        //     it->second,
+        //     endpoint);
         client_to_endpoint_map_.erase(it->second);
         endpoint_to_client_map_.erase(it->first);
     }
@@ -129,11 +129,11 @@ void SessionManager<EndPoint>::destroy_session(
     auto it = client_to_endpoint_map_.find(client_key);
     if (it != client_to_endpoint_map_.end())
     {
-        UXR_AGENT_LOG_INFO(
-            UXR_DECORATE_GREEN("session closed"),
-            "client_key: 0x{:08X}, address: {}",
-            client_key,
-            it->second);
+        // UXR_AGENT_LOG_INFO(
+        //     UXR_DECORATE_GREEN("session closed"),
+        //     "client_key: 0x{:08X}, address: {}",
+        //     client_key,
+        //     it->second);
         endpoint_to_client_map_.erase(it->second);
         client_to_endpoint_map_.erase(it->first);
     }
